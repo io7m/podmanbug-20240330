@@ -14,15 +14,10 @@
  * IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-
 package com.io7m.podmanbug;
 
-import org.postgresql.PGProperty;
-
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Properties;
 
 public final class Main
 {
@@ -104,24 +99,13 @@ public final class Main
     });
 
     /*
-     * Keep repeatedly trying to open a JDBC connection to the server.
+     * Repeatedly try to connect to the postgres socket.
      */
 
-    final var properties = new Properties();
-    properties.setProperty(PGProperty.USER.getName(), "db-user");
-    properties.setProperty(PGProperty.PASSWORD.getName(), "db-password");
-    properties.setProperty(PGProperty.PG_HOST.getName(), "[::]");
-    properties.setProperty(PGProperty.PG_PORT.getName(), "5432");
-    properties.setProperty(PGProperty.PG_DBNAME.getName(), "db-xyz");
-
     while (true) {
-      try (var conn = DriverManager.getConnection(
-        "jdbc:postgresql://",
-        properties)) {
-        if (conn.isValid(1000)) {
-          break;
-        }
-      } catch (final SQLException e) {
+      try (var sock = new Socket("::", 5432)) {
+        sock.getOutputStream();
+      } catch (final Exception e) {
         System.err.printf("Couldn't connect: %s%n".formatted(e.getMessage()));
         Thread.sleep(1_000L);
       }

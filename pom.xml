@@ -81,41 +81,4 @@
     <maven>3.0.4</maven>
   </prerequisites>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>2.0.12</version>
-    </dependency>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.5.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <version>42.7.3</version>
-    </dependency>
-
-    <!-- Build metadata -->
-    <dependency>
-      <groupId>com.io7m.primogenitor</groupId>
-      <artifactId>com.io7m.primogenitor.support</artifactId>
-      <version>8.2.0</version>
-    </dependency>
-
-    <!-- Test suite. -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>${junit.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <version>${junit.version}</version>
-    </dependency>
-  </dependencies>
-
 </project>
