@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.io7m.primogenitor</groupId>
+    <artifactId>com.io7m.primogenitor.full</artifactId>
+    <version>8.2.0</version>
+  </parent>
+
+  <groupId>com.io7m.podman5-20240330</groupId>
+  <artifactId>com.io7m.podman5-20240330</artifactId>
+  <version>0.0.6-SNAPSHOT</version>
+
+  <packaging>jar</packaging>
+  <name>com.io7m.podman5-20240330</name>
+  <description>Podman bug</description>
+  <url>https://www.io7m.com/software/podman5-20240330</url>
+
+  <properties>
+    <checkstyle.skip>true</checkstyle.skip>
+    <mdep.analyze.skip>true</mdep.analyze.skip>
+    <com.io7m.xstructural.version>1.8.0</com.io7m.xstructural.version>
+    <io7m.api.previousVersion>0.0.6-SNAPSHOT</io7m.api.previousVersion>
+    <io7m.java.targetJavaVersion>21</io7m.java.targetJavaVersion>
+    <junit.version>5.10.2</junit.version>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>ISC</name>
+      <url>https://www.io7m.com/license/isc.txt</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/io7m/podman5-20240330</url>
+    <connection>scm:git:https://github.com/io7m/podman5-20240330</connection>
+    <developerConnection>scm:git:https://github.com/io7m/podman5-20240330</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>io7m</id>
+      <name>io7m</name>
+      <email>code@io7m.com</email>
+      <url>https://www.io7m.com</url>
+    </developer>
+  </developers>
+
+  <issueManagement>
+    <url>https://www.github.com/io7m/podman5-20240330/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <distributionManagement>
+    <site>
+      <id>io7m.com</id>
+      <name>io7m.com</name>
+      <url>https://www.io7m.com/software/podman5-20240330</url>
+    </site>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/podman5-20240330/actions</url>
+  </ciManagement>
+
+  <prerequisites>
+    <maven>3.0.4</maven>
+  </prerequisites>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.12</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.5.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.7.3</version>
+    </dependency>
+
+    <!-- Build metadata -->
+    <dependency>
+      <groupId>com.io7m.primogenitor</groupId>
+      <artifactId>com.io7m.primogenitor.support</artifactId>
+      <version>8.2.0</version>
+    </dependency>
+
+    <!-- Test suite. -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>
